@@ -153,3 +153,4 @@ If an admin table with 500,000+ records is slow, three things cause it:
 | **Section 1 Query Count** | **801 queries -> 1 query** | 99.8% reduction via `select_related` and `annotate` |
 | **Section 1 Latency** | **>30 seconds -> 12ms** | Eliminated 504 Gateway Timeout |
 | **Test Suite** | **19 passing tests** | Tested using Pytest, mongomock, and fakeredis |
+
