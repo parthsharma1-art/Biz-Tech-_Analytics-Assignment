@@ -1,6 +1,10 @@
 # Technical Assessment: Full-Stack Developer (Python · Django · Systems Engineering)
 
-A complete, production-grade implementation of all three assessment sections plus the optional live demo:
+> **Submission Links**:
+> - 🎥 **Video Demonstration**: [Watch on Google Drive](https://drive.google.com/file/d/1Q6xhJe2EV9As36RBHRvW2k0zjHMzLrPe/view?usp=drive_link)
+> - 💻 **GitHub Repository**: [Biz-Tech-_Analytics-Assignment](https://github.com/parthsharma1-art/Biz-Tech-_Analytics-Assignment)
+
+A complete, production-grade implementation of all three assessment sections plus the live video demo:
 - **Section 01**: Incident Investigation, N+1 Query Diagnosis & Database-Level Fix for `/api/orders/summary/` with Silk Profiling.
 - **Section 02**: Asynchronous, Rate-Limited Email Queue (Django, Celery, Redis, MongoDB) strictly capped at 200 emails/minute with crash-recovery guarantees and Spring Boot-style annotations.
 - **Section 03**: Written Architecture Review in [`ANSWERS.md`](./ANSWERS.md) (Django Admin optimization, Pagination scaling trade-offs, and File Upload security).
@@ -244,10 +248,10 @@ Execute specific sections or the full suite:
 
 ---
 
-## 6. Optional System Recording (Section 4)
+## 6. Video Demonstration (Section 4)
+- **Video Link**: [Watch Video Demonstration on Google Drive](https://drive.google.com/file/d/1Q6xhJe2EV9As36RBHRvW2k0zjHMzLrPe/view?usp=drive_link)
 - **Live Demo Script**: Run `python demo_queue.py` in your terminal to see 250 jobs enqueued in 0.4 seconds, throttling at 200 emails/minute, and exponential backoff retry.
 - **Narration Script & Layout Guide**: Step-by-step recording guide in [`RECORDING_GUIDE.md`](./RECORDING_GUIDE.md).
-- **Video Link**: `[Add your Loom or Google Drive link here after recording]`
 
 ---
 
