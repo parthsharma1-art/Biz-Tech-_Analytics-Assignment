@@ -1,12 +1,51 @@
+# Python bytecode & cache
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Environment & Credentials
 .env
+.env.*
+*.env
+
+# Testing & Coverage
 .pytest_cache/
 .coverage
 htmlcov/
+.tox/
+.nox/
+
+# Logs & Runtime
 *.log
+celerybeat-schedule*
+*.pid
+
+# Local Databases & Snapshots (only generated at runtime)
 *.sqlite3
 db.sqlite3
+dump.rdb
+*.rdb
 
+# Profiler Dumps (Silk / Python cProfile)
+*.prof
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
