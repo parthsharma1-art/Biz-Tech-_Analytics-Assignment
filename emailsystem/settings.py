@@ -58,8 +58,15 @@ MONGO_URI = os.getenv("MONGO_URI") or os.getenv("MONGODB_URI") or "mongodb://127
 MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "email_queue_db")
 MONGO_EMAILS_COLLECTION = os.getenv("MONGO_EMAILS_COLLECTION", "emails")
 
-# Redis Configuration (Supports REDIS_URL, REDISCLOUD_URL, UPSTASH_REDIS_URL for Render)
-REDIS_URL = os.getenv("REDIS_URL") or os.getenv("REDISCLOUD_URL") or os.getenv("UPSTASH_REDIS_URL") or "redis://127.0.0.1:6379/0"
+# Redis Configuration (Configured for Upstash Redis TLS, supports SPRING_DATA_REDIS_URL, REDIS_URL)
+UPSTASH_DEFAULT_REDIS_URL = "rediss://default:gQAAAAAAAlF9AAIgcDI3NTkwMDRkNmE0NDA0YThjYjIwMzY4Yzc3MjgzOTE2Yw@modest-wombat-151933.upstash.io:6379"
+REDIS_URL = (
+    os.getenv("SPRING_DATA_REDIS_URL")
+    or os.getenv("REDIS_URL")
+    or os.getenv("REDISCLOUD_URL")
+    or os.getenv("UPSTASH_REDIS_URL")
+    or UPSTASH_DEFAULT_REDIS_URL
+)
 
 # Celery Configuration
 CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", REDIS_URL)

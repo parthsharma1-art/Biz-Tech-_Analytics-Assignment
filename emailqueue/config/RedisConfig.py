@@ -8,9 +8,16 @@ class RedisConfig:
     _instance: Optional["RedisConfig"] = None
     _lock: threading.Lock = threading.Lock()
 
+    DEFAULT_UPSTASH_URL = "rediss://default:gQAAAAAAAlF9AAIgcDI3NTkwMDRkNmE0NDA0YThjYjIwMzY4Yzc3MjgzOTE2Yw@modest-wombat-151933.upstash.io:6379"
+
     def __init__(self):
-        envRedisUrl = os.getenv("REDIS_URL") or os.getenv("REDISCLOUD_URL") or os.getenv("UPSTASH_REDIS_URL")
-        self.redisUrl = getattr(settings, "REDIS_URL", None) or envRedisUrl or "redis://127.0.0.1:6379/0"
+        envRedisUrl = (
+            os.getenv("SPRING_DATA_REDIS_URL")
+            or os.getenv("REDIS_URL")
+            or os.getenv("REDISCLOUD_URL")
+            or os.getenv("UPSTASH_REDIS_URL")
+        )
+        self.redisUrl = getattr(settings, "REDIS_URL", None) or envRedisUrl or self.DEFAULT_UPSTASH_URL
         self._client: Optional[redis.Redis] = None
         self._overrideClient: Optional[redis.Redis] = None
 
