@@ -75,6 +75,13 @@ All detailed written answers are documented in [`ANSWERS.md`](file:///c:/Users/p
 
 ---
 
+## Optional System Recording (Section 4)
+- **Loom Recording Link**: `[Add your Loom recording URL here after recording]`
+- **Recording Guide & Script**: See [`RECORDING_GUIDE.md`](./RECORDING_GUIDE.md) for full minute-by-minute talking points and screen setup.
+- **Run Live Demo Script**: `python demo_queue.py`
+
+---
+
 ## Submission Documentation Reference
 
 - **[`ANSWERS.md`](file:///c:/Users/parth/OneDrive/Desktop/BizTechAnaltics-Assignment/ANSWERS.md)**: Investigation log, root cause justification, profiler evidence, and Section 3 review.
