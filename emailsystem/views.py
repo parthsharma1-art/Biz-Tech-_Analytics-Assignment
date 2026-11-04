@@ -61,3 +61,4 @@ def healthCheckView(request: HttpRequest) -> JsonResponse:
         "services": services
     }
     return JsonResponse(payload, status=httpStatus)
+
