@@ -59,6 +59,7 @@ def main():
     print(f"\n[3/4] Burst-submitting {totalJobsToSubmit} email jobs (Flash Sale burst simulation)...")
     print("      (Including 1 intentional transient failure to demonstrate exponential retry)\n")
 
+    runId = int(time.time())
     jobsPayload = []
     for i in range(1, totalJobsToSubmit + 1):
         if i == 5:
@@ -73,7 +74,7 @@ def main():
             "recipient": recipient,
             "subject": subject,
             "body": f"Thank you for your order #{i}.",
-            "emailId": f"demo-job-{i:03d}"
+            "emailId": f"demo-{runId}-{i:03d}"
         })
 
     startTime = time.time()
