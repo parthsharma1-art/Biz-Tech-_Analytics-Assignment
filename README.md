@@ -47,6 +47,12 @@ pytest
 ```
 *Executes all 19 unit and integration tests in ~1.3 seconds.*
 
+### Step 6: Start the Streamlit Web Application Dashboard (Terminal 4)
+```powershell
+streamlit run app.py
+```
+*Opens the interactive real-time dashboard at `http://localhost:8501` featuring live MongoDB queue metrics, single & flash sale burst dispatchers, failed email reprocessing (Scenario 3), and Section 1 database query profiler benchmarks.*
+
 ---
 
 ## 2. Configuration & Environment Variables
