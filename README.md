@@ -249,4 +249,3 @@ Execute specific sections or the full suite:
 
 - **[`ANSWERS.md`](./ANSWERS.md)**: Contains the incident investigation log, root cause justification, query profiler evidence, SIGKILL recovery explanation, and the Section 3 written architecture review.
 - **[`DESIGN.md`](./DESIGN.md)**: Contains architectural trade-offs (Celery+Redis vs. Django Q vs. Custom), Rate Limiting algorithms (Sliding Window vs. Token Bucket vs. Fixed Window), and failure recovery guarantees.
-- **[`INTERVIEW_PREP.md`](./INTERVIEW_PREP.md)**: A complete, simple-English summary designed to help you answer any interview questions confidently.

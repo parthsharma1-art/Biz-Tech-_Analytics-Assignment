@@ -46,6 +46,9 @@ venv.bak/
 *.swp
 *.swo
 
+# Personal Notes / Interview Prep
+INTERVIEW_PREP.md
+
 # OS Artifacts
 .DS_Store
 Thumbs.db
