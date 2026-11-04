@@ -90,3 +90,12 @@ class TestEmailControllers:
         request = self.factory.get("/api/v1/emails/non-existent-id/")
         response = EmailDetailView.as_view()(request, emailId="non-existent-id")
         assert response.status_code == 404
+
+    def testHealthCheckEndpoint(self):
+        from emailsystem.views import healthCheckView
+        request = self.factory.get("/health/")
+        response = healthCheckView(request)
+        assert response.status_code in (200, 503)
+        data = json.loads(response.content.decode("utf-8"))
+        assert "status" in data
+        assert "services" in data

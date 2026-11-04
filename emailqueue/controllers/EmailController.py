@@ -136,3 +136,11 @@ class EmailDetailView(View):
         controller = EmailController()
         return controller.handleGetEmailById(request, emailId)
 
+
+@GetMapping(path="health", name="emailQueueHealth")
+@method_decorator(csrf_exempt, name="dispatch")
+class EmailQueueHealthView(View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        from emailsystem.views import healthCheckView
+        return healthCheckView(request)
+
