@@ -201,3 +201,4 @@ When a table reaches 500,000+ records, Django admin's default configuration caus
 5. **Direct Script Execution / MIME-Type Sniffing**:
    - *Attack*: Older browsers ignore declared headers and execute HTML/JavaScript embedded inside image bytes (MIME sniffing).
    - *Mitigation*: Serve user uploads exclusively from a dedicated static domain (or signed cloud storage URLs on AWS S3/GCS) completely separate from the session cookie domain, and enforce the `X-Content-Type-Options: nosniff` header across all responses.
+

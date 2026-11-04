@@ -45,3 +45,4 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"Item {self.product_id} x {self.quantity} in Order {self.order_id}"
+

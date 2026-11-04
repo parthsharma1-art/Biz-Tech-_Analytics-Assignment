@@ -100,3 +100,4 @@ class OrdersSummaryOptimizedView(View):
             "orderCount": len(summaryList),
             "orders": summaryList,
         })
+

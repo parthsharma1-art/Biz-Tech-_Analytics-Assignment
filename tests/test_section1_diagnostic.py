@@ -63,3 +63,4 @@ class TestSection01Diagnostic:
         assert response.status_code == 200
         # In the optimized view, all orders, customer join, and sum aggregation are executed in 1 query!
         assert queryCount == 1, f"Expected exactly 1 query, but got {queryCount}"
+
