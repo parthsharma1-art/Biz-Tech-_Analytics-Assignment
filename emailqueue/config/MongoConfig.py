@@ -11,7 +11,8 @@ class MongoConfig:
     _lock: threading.Lock = threading.Lock()
 
     def __init__(self):
-        self.mongoUri = getattr(settings, "MONGO_URI", os.getenv("MONGO_URI", "mongodb://127.0.0.1:27017"))
+        envMongoUri = os.getenv("MONGO_URI") or os.getenv("MONGODB_URI")
+        self.mongoUri = getattr(settings, "MONGO_URI", None) or envMongoUri or "mongodb://127.0.0.1:27017"
         self.dbName = getattr(settings, "MONGO_DB_NAME", os.getenv("MONGO_DB_NAME", "email_queue_db"))
         self.emailsCollectionName = getattr(settings, "MONGO_EMAILS_COLLECTION", os.getenv("MONGO_EMAILS_COLLECTION", "emails"))
         self._client: Optional[MongoClient] = None

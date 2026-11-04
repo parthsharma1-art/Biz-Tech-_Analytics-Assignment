@@ -9,7 +9,8 @@ class RedisConfig:
     _lock: threading.Lock = threading.Lock()
 
     def __init__(self):
-        self.redisUrl = getattr(settings, "REDIS_URL", os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0"))
+        envRedisUrl = os.getenv("REDIS_URL") or os.getenv("REDISCLOUD_URL") or os.getenv("UPSTASH_REDIS_URL")
+        self.redisUrl = getattr(settings, "REDIS_URL", None) or envRedisUrl or "redis://127.0.0.1:6379/0"
         self._client: Optional[redis.Redis] = None
         self._overrideClient: Optional[redis.Redis] = None
 

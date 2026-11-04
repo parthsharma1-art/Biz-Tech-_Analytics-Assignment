@@ -53,13 +53,13 @@ USE_TZ = True
 # Allow both trailing slash and non-trailing slash requests without redirect errors
 APPEND_SLASH = False
 
-# MongoDB Configuration (Using 127.0.0.1 avoids Windows IPv6 localhost resolution delay)
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://127.0.0.1:27017")
+# MongoDB Configuration (Supports MONGO_URI, MONGODB_URI for cloud providers like Render, Atlas)
+MONGO_URI = os.getenv("MONGO_URI") or os.getenv("MONGODB_URI") or "mongodb://127.0.0.1:27017"
 MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "email_queue_db")
 MONGO_EMAILS_COLLECTION = os.getenv("MONGO_EMAILS_COLLECTION", "emails")
 
-# Redis Configuration (Using 127.0.0.1 avoids Windows IPv6 localhost resolution delay)
-REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0")
+# Redis Configuration (Supports REDIS_URL, REDISCLOUD_URL, UPSTASH_REDIS_URL for Render)
+REDIS_URL = os.getenv("REDIS_URL") or os.getenv("REDISCLOUD_URL") or os.getenv("UPSTASH_REDIS_URL") or "redis://127.0.0.1:6379/0"
 
 # Celery Configuration
 CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", REDIS_URL)
